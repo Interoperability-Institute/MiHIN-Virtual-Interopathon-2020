@@ -1,0 +1,55 @@
+{
+  "name": "dtr",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "webpack --config ./webpack.config.prod.js --progress --colors",
+    "start": "webpack-dev-server --config ./webpack.config.dev.js",
+    "startDev": "webpack-dev-server --config ./webpack.config.dev.js",
+    "startProd": "webpack-dev-server --config ./webpack.config.prod.js",
+    "startTemplate": "webpack-dev-server --config ./webpack.config.run.js",
+    "lint": "node ./node_modules/.bin/eslint --ext .js ./"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "babel-minify-webpack-plugin": "^0.3.1",
+    "compression-webpack-plugin": "^2.0.0",
+    "css-loader": "^2.1.1",
+    "eslint-config-prettier": "^3.3.0",
+    "ignore-loader": "^0.1.2",
+    "react-hot-loader": "^4.8.2",
+    "style-loader": "^0.23.1",
+    "webpack-cli": "3.1.2",
+    "webpack-merge": "^4.1.4"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "axios": "^0.18.0",
+    "bootstrap": "^4.3.1",
+    "core-js": "^2.5.7",
+    "cql-exec-fhir": "^1.3.0",
+    "cql-execution": "~1.4.1",
+    "es6-promise": "^4.2.6",
+    "fhirclient": "2.1.0",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.17.15",
+    "node-fetch": "^2.5.0",
+    "pdfmake": "^0.1.56",
+    "react": "^16.8.4",
+    "react-bootstrap": "^1.0.0-beta.5",
+    "react-dom": "^16.8.4",
+    "react-scripts": "^2.1.8",
+    "regenerator-runtime": "^0.12.1",
+    "url-search-params-polyfill": "^7.0.1",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "browsersList": [
+    "last 4 firefox versions",
+    "last 4 chrome versions",
+    "ie 11",
+    "last 2 edge versions"
+  ]
+}
