@@ -81,8 +81,8 @@ redirect("");
 
 function redirect(conformanceStatement) {
   var authUri, tokenUri;
-  authUri = "https://api.devinteropland.com/oauth2/authorize";
-  tokenUri = "https://api.devinteropland.com/oauth2/token";
+  authUri = "https://api.interopland.com/oauth2/authorize";
+  tokenUri = "https://api.interopland.com/oauth2/token";
   // var smartExtension = conformanceStatement.rest[0].security.extension.filter(function(e) {
   //   return e.url === "http://fhir-registry.smarthealthit.org/StructureDefinition/oauth-uris";
   // });
