@@ -1,0 +1,420 @@
+[
+    {
+      "fullUrl": "https://dev-jtx41.devinteropland.com/blaze-global-health-system/fhir/Questionnaire/1499",
+      "resource": {
+        "resourceType": "Questionnaire",
+        "id": "1499",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2020-05-03T23:44:43.528+00:00",
+          "source": "#2hlXEHDi6AovxyNl"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is a simple narrative with only plain text</div>"
+        },
+        "extension": [
+          {
+            "url": "http://mihin.org/extension/copyright",
+            "valueString": "Copyright 2014-2020 Michigan Health Information Network Shared Services. Licensed under the Apache License, Version 2.0 (the 'License'); you may not use this file except in compliance with the License. You may obtain a copy of the License at  http://www.apache.org/licenses/LICENSE-2.0.  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an 'AS IS' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."
+          }
+        ],
+        "identifier": [
+          {
+            "use": "official",
+            "value": "be5f388e-cb6e-4ac5-bd96-cacc652b634a"
+          },
+          {
+            "use": "official",
+            "value": "c523a028-914a-4aa6-862f-834f3602ba81"
+          }
+        ],
+        "version": "2",
+        "name": "HungerVitalSign",
+        "title": "Hunger Vital Sign ",
+        "status": "active",
+        "subjectType": [
+          "Patient"
+        ],
+        "date": "2020-05-03T23:44:43+00:00",
+        "publisher": "CMS",
+        "description": "Questionnaire to assess food insecurity",
+        "purpose": "Assess Food Insecurity",
+        "approvalDate": "2020-05-03",
+        "lastReviewDate": "2020-05-03",
+        "effectivePeriod": {
+          "start": "2020-05-03T23:44:43+00:00",
+          "end": "2020-05-03T23:44:43+00:00"
+        },
+        "code": [
+          {
+            "system": "http://loinc.org",
+            "code": "88121-9",
+            "display": "Hunger Vital Sign (HVS)"
+          }
+        ],
+        "item": [
+          {
+            "linkId": "1",
+            "definition": "Worried Food Would Run Out",
+            "code": [
+              {
+                "system": "http://loinc.org",
+                "code": "88122-7"
+              }
+            ],
+            "prefix": "1",
+            "text": "Within the past 12 months we worried whether our food would run out before we got money to buy more [U.S. FSS]",
+            "type": "group",
+            "item": [
+              {
+                "linkId": "1.1",
+                "definition": "Often true",
+                "code": [
+                  {
+                    "system": "http://loinc.org",
+                    "code": "LA28397-0",
+                    "display": "Often true"
+                  }
+                ],
+                "prefix": "A",
+                "text": "Often true",
+                "type": "boolean"
+              },
+              {
+                "linkId": "1.2",
+                "definition": "Sometimes true",
+                "code": [
+                  {
+                    "system": "http://loinc.org",
+                    "code": "LA6729-3",
+                    "display": "Sometimes true"
+                  }
+                ],
+                "prefix": "B",
+                "text": "Sometimes true",
+                "type": "boolean"
+              },
+              {
+                "linkId": "1.3",
+                "definition": "Never true",
+                "code": [
+                  {
+                    "system": "http://loinc.org",
+                    "code": "LA28398-8",
+                    "display": "Never true"
+                  }
+                ],
+                "prefix": "C",
+                "text": "Never true",
+                "type": "boolean"
+              },
+              {
+                "linkId": "1.4",
+                "definition": "Don't know/refused",
+                "code": [
+                  {
+                    "system": "http://loinc.org",
+                    "code": "LA15775-2",
+                    "display": "Don't know/refused"
+                  }
+                ],
+                "prefix": "D",
+                "text": "Don't know/refused",
+                "type": "boolean"
+              }
+            ]
+          },
+          {
+            "linkId": "2",
+            "definition": "Food Didn't Last",
+            "code": [
+              {
+                "system": "http://loinc.org",
+                "code": "88122-7"
+              }
+            ],
+            "prefix": "2",
+            "text": "Within the past 12 months the food we bought just didn't last and we didn't have money to get more [U.S. FSS]",
+            "type": "group",
+            "item": [
+              {
+                "linkId": "2.1",
+                "definition": "Often true",
+                "code": [
+                  {
+                    "system": "http://loinc.org",
+                    "code": "LA28397-0",
+                    "display": "Often true"
+                  }
+                ],
+                "prefix": "A",
+                "text": "Often true",
+                "type": "boolean"
+              },
+              {
+                "linkId": "2.2",
+                "definition": "Sometimes true",
+                "code": [
+                  {
+                    "system": "http://loinc.org",
+                    "code": "LA6729-3",
+                    "display": "Sometimes true"
+                  }
+                ],
+                "prefix": "B",
+                "text": "Sometimes true",
+                "type": "boolean"
+              },
+              {
+                "linkId": "2.3",
+                "definition": "Never true",
+                "code": [
+                  {
+                    "system": "http://loinc.org",
+                    "code": "LA28398-8",
+                    "display": "Never true"
+                  }
+                ],
+                "prefix": "C",
+                "text": "Never true",
+                "type": "boolean"
+              },
+              {
+                "linkId": "2.4",
+                "definition": "Don't know/refused",
+                "code": [
+                  {
+                    "system": "http://loinc.org",
+                    "code": "LA15775-2",
+                    "display": "Don't know/refused"
+                  }
+                ],
+                "prefix": "D",
+                "text": "Don't know/refused",
+                "type": "boolean"
+              }
+            ]
+          }
+        ]
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "fullUrl": "https://dev-jtx41.devinteropland.com/blaze-global-health-system/fhir/Questionnaire/66291",
+      "resource": {
+        "resourceType": "Questionnaire",
+        "id": "66291",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2020-05-04T03:28:42.356+00:00",
+          "source": "#J2D9XhWwHeRe8K7q"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">This is a simple narrative with only plain text</div>"
+        },
+        "extension": [
+          {
+            "url": "http://mihin.org/extension/copyright",
+            "valueString": "Copyright 2014-2020 Michigan Health Information Network Shared Services. Licensed under the Apache License, Version 2.0 (the 'License'); you may not use this file except in compliance with the License. You may obtain a copy of the License at  http://www.apache.org/licenses/LICENSE-2.0.  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an 'AS IS' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License."
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
+            "valueString": "todo/Library/home-oxygen-logic"
+          }
+        ],
+        "version": "1",
+        "name": "HomeOxygenTherapyOrder",
+        "title": "Home Oxygen Therapy Order Template",
+        "status": "draft",
+        "subjectType": [
+          "Patient"
+        ],
+        "date": "2019-03-11T00:00:00+00:00",
+        "publisher": "Da Vinci DTR",
+        "item": [
+          {
+            "linkId": "1",
+            "text": "Patient Information",
+            "type": "group",
+            "item": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+                    "valueExpression": {
+                      "language": "text/cql",
+                      "expression": "PatientLastName"
+                    }
+                  }
+                ],
+                "linkId": "1.1",
+                "text": "Last Name",
+                "type": "string"
+              },
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+                    "valueExpression": {
+                      "language": "text/cql",
+                      "expression": "PatientFirstName"
+                    }
+                  }
+                ],
+                "linkId": "1.2",
+                "text": "First Name",
+                "type": "string"
+              },
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+                    "valueExpression": {
+                      "language": "text/cql",
+                      "expression": "PatientMiddleInitial"
+                    }
+                  }
+                ],
+                "linkId": "1.3",
+                "text": "Middle Initial",
+                "type": "string"
+              },
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+                    "valueExpression": {
+                      "language": "text/cql",
+                      "expression": "PatientDateOfBirth"
+                    }
+                  }
+                ],
+                "linkId": "1.4",
+                "text": "Date of Birth",
+                "type": "date"
+              },
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+                    "valueExpression": {
+                      "language": "text/cql",
+                      "expression": "PatientGender"
+                    }
+                  }
+                ],
+                "linkId": "1.5",
+                "text": "Gender",
+                "type": "choice"
+              },
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+                    "valueExpression": {
+                      "language": "text/cql",
+                      "expression": "PatientMedicareId"
+                    }
+                  }
+                ],
+                "linkId": "1.6",
+                "text": "Medicare Id",
+                "type": "string"
+              }
+            ]
+          },
+          {
+            "linkId": "2",
+            "text": "Lab Tests",
+            "type": "group",
+            "item": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+                    "valueExpression": {
+                      "language": "text/cql",
+                      "expression": "PatientO2Saturation"
+                    }
+                  }
+                ],
+                "linkId": "2.1",
+                "text": "O2 Saturation",
+                "type": "quantity"
+              },
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+                    "valueExpression": {
+                      "language": "text/cql",
+                      "expression": "PatientRecievedX-ray"
+                    }
+                  }
+                ],
+                "linkId": "2.2",
+                "text": "Recieved X-ray",
+                "type": "boolean"
+              },
+              {
+                "linkId": "2.3",
+                "text": "Vital Signs",
+                "type": "group",
+                "item": [
+                  {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+                        "valueExpression": {
+                          "language": "text/cql",
+                          "expression": "PatientHeartRate"
+                        }
+                      }
+                    ],
+                    "linkId": "2.3.1",
+                    "text": "Heart Rate",
+                    "type": "quantity"
+                  },
+                  {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+                        "valueExpression": {
+                          "language": "text/cql",
+                          "expression": "PatientSystolicBP"
+                        }
+                      }
+                    ],
+                    "linkId": "2.3.2",
+                    "text": "Systolic BP",
+                    "type": "quantity"
+                  },
+                  {
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+                        "valueExpression": {
+                          "language": "text/cql",
+                          "expression": "PatientDiastolicBP"
+                        }
+                      }
+                    ],
+                    "linkId": "2.3.3",
+                    "text": "Diastolic BP",
+                    "type": "quantity"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "search": {
+        "mode": "match"
+      }
+    }
+]
