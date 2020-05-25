@@ -1,0 +1,831 @@
+{
+	"info": {
+		"_postman_id": "96e7bf04-ee91-4a3a-ac71-e6e8970435bf",
+		"name": "IOL Connectathon DEQM Participation v2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Patient",
+			"item": [
+				{
+					"name": "Step 1 - Create Patient in Blaze Global Health",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{Basic Auth Password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{Basic Auth Username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"resourceType\": \"Patient\",\n  \"id\": \"{{Patient ID}}\",\n  \"identifier\": [\n    {\n      \"use\": \"official\",\n      \"type\": {\n        \"coding\": [\n          {\n            \"system\": \"http://hl7.org/fhir/identifier-type\",\n            \"code\": \"SB\",\n            \"display\": \"Social Beneficiary Identifier\"\n          }\n        ],\n        \"text\": \"US Social Security Number\"\n      },\n      \"system\": \"http://hl7.org/fhir/sid/us-ssn\",\n      \"value\": \"{{Patient SSN}}\"\n    }\n  ],\n  \"name\": [\n    {\n      \"family\": \"Everywoman\",\n      \"given\": [\n        \"Eve\",\n        \"Veronica\"\n      ]\n    }\n  ],\n  \"gender\": \"female\",\n  \"birthDate\": \"1999-05-21\",\n  \"address\": [\n    {\n      \"use\": \"home\",\n      \"type\": \"postal\",\n      \"line\": [\n        \"666 Eden Circle\"\n      ],\n      \"city\": \"Boise\",\n      \"district\": \"Ada County\",\n      \"state\": \"ID\",\n      \"postalCode\": \"83701\"\n    }\n  ],\n  \"telecom\": [\n    {\n      \"system\": \"phone\",\n      \"value\": \"901-555-5864\",\n      \"use\": \"home\"\n    },\n    {\n      \"system\": \"phone\",\n      \"value\": \"901-555-9891\",\n      \"use\": \"mobile\"\n    }\n  ],\n  \"extension\": [\n    {\n      \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\",\n      \"valueCodeableConcept\": {\n        \"coding\": [\n          {\n            \"system\": \"http://hl7.org/fhir/v3/Race\",\n            \"code\": \"2056-0\",\n            \"display\": \"Black\"\n          }\n        ]\n      }\n    },\n    {\n      \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity\",\n      \"valueCodeableConcept\": {\n        \"coding\": [\n          {\n            \"system\": \"http://hl7.org/fhir/v3/Ethnicity\",\n            \"code\": \"2186-5\",\n            \"display\": \"Not Hispanic or Latino\"\n          }\n        ]\n      }\n    },\n    {\n      \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-religion\",\n      \"valueCodeableConcept\": {\n        \"coding\": [\n          {\n            \"system\": \"http://hl7.org/fhir/v3/ReligiousAffiliation\",\n            \"code\": \"1004\",\n            \"display\": \"Agnosticism\"\n          }\n        ]\n      }\n    }\n  ],\n  \"active\": true\n}\n"
+						},
+						"url": {
+							"raw": "{{Blaze Global Health}}/fhir/Patient/{{Patient ID}}",
+							"host": [
+								"{{Blaze Global Health}}"
+							],
+							"path": [
+								"fhir",
+								"Patient",
+								"{{Patient ID}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Step 1 - Create Patient in Blaze Global Health",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"resourceType\": \"Patient\",\n  \"id\": \"{{Patient ID}}\",\n  \"identifier\": [\n    {\n      \"use\": \"official\",\n      \"type\": {\n        \"coding\": [\n          {\n            \"system\": \"http://hl7.org/fhir/identifier-type\",\n            \"code\": \"SB\",\n            \"display\": \"Social Beneficiary Identifier\"\n          }\n        ],\n        \"text\": \"US Social Security Number\"\n      },\n      \"system\": \"http://hl7.org/fhir/sid/us-ssn\",\n      \"value\": \"{{Patient SSN}}\"\n    }\n  ],\n  \"name\": [\n    {\n      \"family\": \"Everywoman\",\n      \"given\": [\n        \"Eve\",\n        \"Veronica\"\n      ]\n    }\n  ],\n  \"gender\": \"female\",\n  \"birthDate\": \"1999-05-21\",\n  \"address\": [\n    {\n      \"use\": \"home\",\n      \"type\": \"postal\",\n      \"line\": [\n        \"666 Eden Circle\"\n      ],\n      \"city\": \"Boise\",\n      \"district\": \"Ada County\",\n      \"state\": \"ID\",\n      \"postalCode\": \"83701\"\n    }\n  ],\n  \"telecom\": [\n    {\n      \"system\": \"phone\",\n      \"value\": \"901-555-5864\",\n      \"use\": \"home\"\n    },\n    {\n      \"system\": \"phone\",\n      \"value\": \"901-555-9891\",\n      \"use\": \"mobile\"\n    }\n  ],\n  \"extension\": [\n    {\n      \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\",\n      \"valueCodeableConcept\": {\n        \"coding\": [\n          {\n            \"system\": \"http://hl7.org/fhir/v3/Race\",\n            \"code\": \"2056-0\",\n            \"display\": \"Black\"\n          }\n        ]\n      }\n    },\n    {\n      \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity\",\n      \"valueCodeableConcept\": {\n        \"coding\": [\n          {\n            \"system\": \"http://hl7.org/fhir/v3/Ethnicity\",\n            \"code\": \"2186-5\",\n            \"display\": \"Not Hispanic or Latino\"\n          }\n        ]\n      }\n    },\n    {\n      \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-religion\",\n      \"valueCodeableConcept\": {\n        \"coding\": [\n          {\n            \"system\": \"http://hl7.org/fhir/v3/ReligiousAffiliation\",\n            \"code\": \"1004\",\n            \"display\": \"Agnosticism\"\n          }\n        ]\n      }\n    }\n  ],\n  \"active\": true\n}\n"
+								},
+								"url": {
+									"raw": "{{Blaze Global Health}}/fhir/Patient/{{Patient ID}}",
+									"host": [
+										"{{Blaze Global Health}}"
+									],
+									"path": [
+										"fhir",
+										"Patient",
+										"{{Patient ID}}"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 23 May 2020 03:28:43 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/fhir+json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "HAPI FHIR 4.2.0 REST Server (FHIR Server; FHIR 4.0.0/R4)"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4\""
+								},
+								{
+									"key": "X-Request-ID",
+									"value": "ygti1N4GPkEtmw7t"
+								},
+								{
+									"key": "Content-Location",
+									"value": "https://dev-jtx54.devinteropland.com/blaze-global-health-system/fhir/Patient/grr0844/_history/4"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Sat, 23 May 2020 03:28:43 GMT"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resourceType\": \"Patient\",\n    \"id\": \"grr0844\",\n    \"meta\": {\n        \"versionId\": \"1\",\n        \"lastUpdated\": \"2020-05-23T03:28:43.263+00:00\"\n    },\n    \"text\": {\n        \"status\": \"generated\",\n        \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\"><div class=\\\"hapiHeaderText\\\">Eve Veronica <b>EVERYWOMAN </b></div><table class=\\\"hapiPropertyTable\\\"><tbody><tr><td>Identifier</td><td>999990844</td></tr><tr><td>Address</td><td><span>666 Eden Circle </span><br/><span>Boise </span><span>ID </span></td></tr><tr><td>Date of birth</td><td><span>21 May 1999</span></td></tr></tbody></table></div>\"\n    },\n    \"extension\": [\n        {\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\",\n            \"valueCodeableConcept\": {\n                \"coding\": [\n                    {\n                        \"system\": \"http://hl7.org/fhir/v3/Race\",\n                        \"code\": \"2056-0\",\n                        \"display\": \"Black\"\n                    }\n                ]\n            }\n        },\n        {\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity\",\n            \"valueCodeableConcept\": {\n                \"coding\": [\n                    {\n                        \"system\": \"http://hl7.org/fhir/v3/Ethnicity\",\n                        \"code\": \"2186-5\",\n                        \"display\": \"Not Hispanic or Latino\"\n                    }\n                ]\n            }\n        },\n        {\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-religion\",\n            \"valueCodeableConcept\": {\n                \"coding\": [\n                    {\n                        \"system\": \"http://hl7.org/fhir/v3/ReligiousAffiliation\",\n                        \"code\": \"1004\",\n                        \"display\": \"Agnosticism\"\n                    }\n                ]\n            }\n        }\n    ],\n    \"identifier\": [\n        {\n            \"use\": \"official\",\n            \"type\": {\n                \"coding\": [\n                    {\n                        \"system\": \"http://hl7.org/fhir/identifier-type\",\n                        \"code\": \"SB\",\n                        \"display\": \"Social Beneficiary Identifier\"\n                    }\n                ],\n                \"text\": \"US Social Security Number\"\n            },\n            \"system\": \"http://hl7.org/fhir/sid/us-ssn\",\n            \"value\": \"999990844\"\n        }\n    ],\n    \"active\": true,\n    \"name\": [\n        {\n            \"family\": \"Everywoman\",\n            \"given\": [\n                \"Eve\",\n                \"Veronica\"\n            ]\n        }\n    ],\n    \"telecom\": [\n        {\n            \"system\": \"phone\",\n            \"value\": \"901-555-5864\",\n            \"use\": \"home\"\n        },\n        {\n            \"system\": \"phone\",\n            \"value\": \"901-555-9891\",\n            \"use\": \"mobile\"\n        }\n    ],\n    \"gender\": \"female\",\n    \"birthDate\": \"1999-05-21\",\n    \"address\": [\n        {\n            \"use\": \"home\",\n            \"type\": \"postal\",\n            \"line\": [\n                \"666 Eden Circle\"\n            ],\n            \"city\": \"Boise\",\n            \"district\": \"Ada County\",\n            \"state\": \"ID\",\n            \"postalCode\": \"83701\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Step 2 - Create Patient in Better Health Insurance",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{Basic Auth Password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{Basic Auth Username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"resourceType\": \"Patient\",\n  \"id\": \"payer-{{Patient ID}}\",\n  \"identifier\": [\n    {\n      \"use\": \"official\",\n      \"type\": {\n        \"coding\": [\n          {\n            \"system\": \"http://hl7.org/fhir/identifier-type\",\n            \"code\": \"SB\",\n            \"display\": \"Social Beneficiary Identifier\"\n          }\n        ],\n        \"text\": \"US Social Security Number\"\n      },\n      \"system\": \"http://hl7.org/fhir/sid/us-ssn\",\n      \"value\": \"{{Patient SSN}}\"\n    }\n  ],\n  \"name\": [\n    {\n      \"family\": \"Everywoman\",\n      \"given\": [\n        \"Eve\",\n        \"Veronica\"\n      ]\n    }\n  ],\n  \"gender\": \"female\",\n  \"birthDate\": \"1999-05-21\",\n  \"address\": [\n    {\n      \"use\": \"home\",\n      \"type\": \"postal\",\n      \"line\": [\n        \"666 Eden Circle\"\n      ],\n      \"city\": \"Boise\",\n      \"district\": \"Ada County\",\n      \"state\": \"ID\",\n      \"postalCode\": \"83701\"\n    }\n  ],\n  \"telecom\": [\n    {\n      \"system\": \"phone\",\n      \"value\": \"901-555-5864\",\n      \"use\": \"home\"\n    },\n    {\n      \"system\": \"phone\",\n      \"value\": \"901-555-9891\",\n      \"use\": \"mobile\"\n    }\n  ],\n  \"extension\": [\n    {\n      \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\",\n      \"valueCodeableConcept\": {\n        \"coding\": [\n          {\n            \"system\": \"http://hl7.org/fhir/v3/Race\",\n            \"code\": \"2056-0\",\n            \"display\": \"Black\"\n          }\n        ]\n      }\n    },\n    {\n      \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity\",\n      \"valueCodeableConcept\": {\n        \"coding\": [\n          {\n            \"system\": \"http://hl7.org/fhir/v3/Ethnicity\",\n            \"code\": \"2186-5\",\n            \"display\": \"Not Hispanic or Latino\"\n          }\n        ]\n      }\n    },\n    {\n      \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-religion\",\n      \"valueCodeableConcept\": {\n        \"coding\": [\n          {\n            \"system\": \"http://hl7.org/fhir/v3/ReligiousAffiliation\",\n            \"code\": \"1004\",\n            \"display\": \"Agnosticism\"\n          }\n        ]\n      }\n    }\n  ],\n  \"active\": true\n}\n"
+						},
+						"url": {
+							"raw": "{{Better Health}}/fhir/Patient/payer-{{Patient ID}}",
+							"host": [
+								"{{Better Health}}"
+							],
+							"path": [
+								"fhir",
+								"Patient",
+								"payer-{{Patient ID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Partial Measure Requirements",
+			"item": [
+				{
+					"name": "Step 3 - May Encounter at Blaze Global Health",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{Basic Auth Password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{Basic Auth Username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"Encounter\",\r\n  \"id\": \"{{Patient ID}}-e1\",\r\n  \"subject\": {\r\n    \"reference\": \"Patient/{{Patient ID}}\"\r\n  },\r\n  \"period\": {\r\n    \"start\": \"2019-05-04T13:00:00-04:00\",\r\n    \"end\": \"2019-05-04T15:30:00-04:00\"\r\n  },\r\n  \"status\": \"finished\",\r\n  \"class\": {\r\n    \"system\": \"http://hl7.org/fhir/v3/ActCode\",\r\n    \"code\": \"IMP\",\r\n    \"display\": \"inpatient encounter\"\r\n  },\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"32485007\",\r\n          \"display\": \"Hospital admission\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"participant\": [\r\n    {\r\n      \"period\": {\r\n        \"start\": \"2019-05-04T13:00:00-04:00\",\r\n        \"end\": \"2019-05-04T15:30:00-04:00\"\r\n      },\r\n      \"individual\": {\r\n        \"reference\": \"Practitioner/mrp-numer\",\r\n        \"display\": \"Stanley Jason Garrett MD\"\r\n      }\r\n    }\r\n  ],\r\n  \"hospitalization\": {\r\n    \"dischargeDisposition\": {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://hl7.org/fhir/discharge-disposition\",\r\n          \"code\": \"home\",\r\n          \"display\": \"Home\"\r\n        }\r\n      ]\r\n    }\r\n  },\r\n  \"location\": [\r\n    {\r\n      \"location\": {\r\n        \"reference\": \"Location/Location-1001\",\r\n        \"display\": \"Windward General Hospital\"\r\n      }\r\n    }\r\n  ],\r\n  \"serviceProvider\": {\r\n    \"reference\": \"Organization/Organization-1001\",\r\n    \"display\": \"Windward General Hospital\"\r\n  }\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{Blaze Global Health}}/fhir/Encounter/{{Patient ID}}-e1",
+							"host": [
+								"{{Blaze Global Health}}"
+							],
+							"path": [
+								"fhir",
+								"Encounter",
+								"{{Patient ID}}-e1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step 4 - July Encounter at Blaze Global Health",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{Basic Auth Password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{Basic Auth Username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"Encounter\",\r\n  \"id\": \"{{Patient ID}}-e2\",\r\n  \"subject\": {\r\n    \"reference\": \"Patient/{{Patient ID}}\"\r\n  },\r\n  \"period\": {\r\n    \"start\": \"2019-07-22T14:30:00-04:00\",\r\n    \"end\": \"2019-07-22T16:30:00-04:00\"\r\n  },\r\n  \"status\": \"finished\",\r\n  \"class\": {\r\n    \"system\": \"http://hl7.org/fhir/v3/ActCode\",\r\n    \"code\": \"IMP\",\r\n    \"display\": \"inpatient encounter\"\r\n  },\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"32485007\",\r\n          \"display\": \"Hospital admission\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"participant\": [\r\n    {\r\n      \"period\": {\r\n        \"start\": \"2019-07-22T14:30:00-04:00\",\r\n        \"end\": \"2019-07-22T16:30:00-04:00\"\r\n      },\r\n      \"individual\": {\r\n        \"reference\": \"Practitioner/mrp-numer\",\r\n        \"display\": \"Stanley Jason Garrett MD\"\r\n      }\r\n    }\r\n  ],\r\n  \"hospitalization\": {\r\n    \"dischargeDisposition\": {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://hl7.org/fhir/discharge-disposition\",\r\n          \"code\": \"home\",\r\n          \"display\": \"Home\"\r\n        }\r\n      ]\r\n    }\r\n  },\r\n  \"location\": [\r\n    {\r\n      \"location\": {\r\n        \"reference\": \"Location/Location-1001\",\r\n        \"display\": \"Windward General Hospital\"\r\n      }\r\n    }\r\n  ],\r\n  \"serviceProvider\": {\r\n    \"reference\": \"Organization/Organization-1001\",\r\n    \"display\": \"Windward General Hospital\"\r\n  }\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{Blaze Global Health}}/fhir/Encounter/{{Patient ID}}-e2",
+							"host": [
+								"{{Blaze Global Health}}"
+							],
+							"path": [
+								"fhir",
+								"Encounter",
+								"{{Patient ID}}-e2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step 5 - Status Measure data with Data Exchange",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"user-agent": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{Basic Auth Password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{Basic Auth Username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{Blaze Global Health}}/fhir/Measure/measure-mrpfhir/$notify-submit-requested?patient={{Patient ID}}&periodStart=2019-01-01&periodEnd=2020-01-01",
+							"host": [
+								"{{Blaze Global Health}}"
+							],
+							"path": [
+								"fhir",
+								"Measure",
+								"measure-mrpfhir",
+								"$notify-submit-requested"
+							],
+							"query": [
+								{
+									"key": "patient",
+									"value": "{{Patient ID}}"
+								},
+								{
+									"key": "periodStart",
+									"value": "2019-01-01"
+								},
+								{
+									"key": "periodEnd",
+									"value": "2020-01-01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step 6 - Evaluate measure with Individual Reporting",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{Basic Auth Password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{Basic Auth Username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{Blaze Global Health}}/fhir/Measure/measure-mrpfhir/$notify-report-requested?patient={{Patient ID}}&periodStart=2019-01-01&periodEnd=2020-01-01",
+							"host": [
+								"{{Blaze Global Health}}"
+							],
+							"path": [
+								"fhir",
+								"Measure",
+								"measure-mrpfhir",
+								"$notify-report-requested"
+							],
+							"query": [
+								{
+									"key": "patient",
+									"value": "{{Patient ID}}"
+								},
+								{
+									"key": "periodStart",
+									"value": "2019-01-01"
+								},
+								{
+									"key": "periodEnd",
+									"value": "2020-01-01"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Full Measure Requirements",
+			"item": [
+				{
+					"name": "Step 7 - August Observation at Blaze Global Health",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{Basic Auth Password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{Basic Auth Username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"Observation\",\r\n  \"id\": \"{{Patient ID}}\",\r\n  \"subject\": {\r\n    \"reference\": \"Patient/{{Patient ID}}\"\r\n  },\r\n  \"effectiveDateTime\": \"2019-08-02T14:19:00-04:00\",\r\n  \"status\": \"final\",\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"430193006\"\r\n      }\r\n    ]\r\n  },\r\n  \"performer\": [\r\n    {\r\n      \"reference\": \"Practitioner/mrp-numer\"\r\n    }\r\n  ],\r\n  \"valueQuantity\": {\r\n    \"value\": 5.0\r\n  }\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{Blaze Global Health}}/fhir/Observation/{{Patient ID}}",
+							"host": [
+								"{{Blaze Global Health}}"
+							],
+							"path": [
+								"fhir",
+								"Observation",
+								"{{Patient ID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Step 8 - Status Measure data with Data Exchange",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"user-agent": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{Basic Auth Password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{Basic Auth Username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{Blaze Global Health}}/fhir/Measure/measure-mrpfhir/$notify-submit-requested?patient={{Patient ID}}&periodStart=2019-01-01&periodEnd=2020-01-01",
+							"host": [
+								"{{Blaze Global Health}}"
+							],
+							"path": [
+								"fhir",
+								"Measure",
+								"measure-mrpfhir",
+								"$notify-submit-requested"
+							],
+							"query": [
+								{
+									"key": "patient",
+									"value": "{{Patient ID}}"
+								},
+								{
+									"key": "periodStart",
+									"value": "2019-01-01"
+								},
+								{
+									"key": "periodEnd",
+									"value": "2020-01-01"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Cheat Sheet",
+			"item": [
+				{
+					"name": "Query Encounters at Better Health Insurance",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{Basic Auth Password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{Basic Auth Username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"Encounter\",\r\n  \"subject\": {\r\n    \"reference\": \"Patient/<Patient id from Step 1>\"\r\n  },\r\n  \"period\": {\r\n    \"start\": \"2019-09-22T00:14:30-04:00\",\r\n    \"end\": \"2019-05-03T15:16:00-04:00\"\r\n  },\r\n  \"status\": \"finished\",\r\n  \"class\": {\r\n    \"system\": \"http://hl7.org/fhir/v3/ActCode\",\r\n    \"code\": \"IMP\",\r\n    \"display\": \"inpatient encounter\"\r\n  },\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"32485007\",\r\n          \"display\": \"Hospital admission\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"participant\": [\r\n    {\r\n      \"period\": {\r\n        \"start\": \"2019-09-22T00:14:30-04:00\",\r\n        \"end\": \"2019-05-03T15:16:00-04:00\"\r\n      },\r\n      \"individual\": {\r\n        \"reference\": \"Practitioner/mrp-numer\",\r\n        \"display\": \"Stanley Jason Garrett MD\"\r\n      }\r\n    }\r\n  ],\r\n  \"hospitalization\": {\r\n    \"dischargeDisposition\": {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://hl7.org/fhir/discharge-disposition\",\r\n          \"code\": \"home\",\r\n          \"display\": \"Home\"\r\n        }\r\n      ]\r\n    }\r\n  },\r\n  \"location\": [\r\n    {\r\n      \"location\": {\r\n        \"reference\": \"Location/Location-1001\",\r\n        \"display\": \"Windward General Hospital\"\r\n      }\r\n    }\r\n  ],\r\n  \"serviceProvider\": {\r\n    \"reference\": \"Organization/Organization-1001\",\r\n    \"display\": \"Windward General Hospital\"\r\n  }\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{Better Health}}/fhir/Encounter?subject:Patient.identifier={{Patient SSN}}",
+							"host": [
+								"{{Better Health}}"
+							],
+							"path": [
+								"fhir",
+								"Encounter"
+							],
+							"query": [
+								{
+									"key": "subject:Patient.identifier",
+									"value": "{{Patient SSN}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Observations at Better Health Insurance",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{Basic Auth Password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{Basic Auth Username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"Encounter\",\r\n  \"subject\": {\r\n    \"reference\": \"Patient/<Patient id from Step 1>\"\r\n  },\r\n  \"period\": {\r\n    \"start\": \"2019-09-22T00:14:30-04:00\",\r\n    \"end\": \"2019-05-03T15:16:00-04:00\"\r\n  },\r\n  \"status\": \"finished\",\r\n  \"class\": {\r\n    \"system\": \"http://hl7.org/fhir/v3/ActCode\",\r\n    \"code\": \"IMP\",\r\n    \"display\": \"inpatient encounter\"\r\n  },\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"32485007\",\r\n          \"display\": \"Hospital admission\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"participant\": [\r\n    {\r\n      \"period\": {\r\n        \"start\": \"2019-09-22T00:14:30-04:00\",\r\n        \"end\": \"2019-05-03T15:16:00-04:00\"\r\n      },\r\n      \"individual\": {\r\n        \"reference\": \"Practitioner/mrp-numer\",\r\n        \"display\": \"Stanley Jason Garrett MD\"\r\n      }\r\n    }\r\n  ],\r\n  \"hospitalization\": {\r\n    \"dischargeDisposition\": {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://hl7.org/fhir/discharge-disposition\",\r\n          \"code\": \"home\",\r\n          \"display\": \"Home\"\r\n        }\r\n      ]\r\n    }\r\n  },\r\n  \"location\": [\r\n    {\r\n      \"location\": {\r\n        \"reference\": \"Location/Location-1001\",\r\n        \"display\": \"Windward General Hospital\"\r\n      }\r\n    }\r\n  ],\r\n  \"serviceProvider\": {\r\n    \"reference\": \"Organization/Organization-1001\",\r\n    \"display\": \"Windward General Hospital\"\r\n  }\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{Better Health}}/fhir/Observation?subject:Patient.identifier={{Patient SSN}}",
+							"host": [
+								"{{Better Health}}"
+							],
+							"path": [
+								"fhir",
+								"Observation"
+							],
+							"query": [
+								{
+									"key": "subject:Patient.identifier",
+									"value": "{{Patient SSN}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Query Data Exchange Measure Reports at Better Health Insurance",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{Basic Auth Password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{Basic Auth Username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"resourceType\": \"Encounter\",\r\n  \"subject\": {\r\n    \"reference\": \"Patient/<Patient id from Step 1>\"\r\n  },\r\n  \"period\": {\r\n    \"start\": \"2019-09-22T00:14:30-04:00\",\r\n    \"end\": \"2019-05-03T15:16:00-04:00\"\r\n  },\r\n  \"status\": \"finished\",\r\n  \"class\": {\r\n    \"system\": \"http://hl7.org/fhir/v3/ActCode\",\r\n    \"code\": \"IMP\",\r\n    \"display\": \"inpatient encounter\"\r\n  },\r\n  \"type\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://snomed.info/sct\",\r\n          \"code\": \"32485007\",\r\n          \"display\": \"Hospital admission\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"participant\": [\r\n    {\r\n      \"period\": {\r\n        \"start\": \"2019-09-22T00:14:30-04:00\",\r\n        \"end\": \"2019-05-03T15:16:00-04:00\"\r\n      },\r\n      \"individual\": {\r\n        \"reference\": \"Practitioner/mrp-numer\",\r\n        \"display\": \"Stanley Jason Garrett MD\"\r\n      }\r\n    }\r\n  ],\r\n  \"hospitalization\": {\r\n    \"dischargeDisposition\": {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://hl7.org/fhir/discharge-disposition\",\r\n          \"code\": \"home\",\r\n          \"display\": \"Home\"\r\n        }\r\n      ]\r\n    }\r\n  },\r\n  \"location\": [\r\n    {\r\n      \"location\": {\r\n        \"reference\": \"Location/Location-1001\",\r\n        \"display\": \"Windward General Hospital\"\r\n      }\r\n    }\r\n  ],\r\n  \"serviceProvider\": {\r\n    \"reference\": \"Organization/Organization-1001\",\r\n    \"display\": \"Windward General Hospital\"\r\n  }\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{Better Health}}/fhir/MeasureReport?subject:Patient.identifier={{Patient SSN}}",
+							"host": [
+								"{{Better Health}}"
+							],
+							"path": [
+								"fhir",
+								"MeasureReport"
+							],
+							"query": [
+								{
+									"key": "subject:Patient.identifier",
+									"value": "{{Patient SSN}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Evaluate measure with Indivual Reporting",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{Basic Auth Password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{Basic Auth Username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{Blaze Global Health}}/fhir/Measure/measure-mrpfhir/$notify-report-requested?patient={{Patient ID}}&periodStart=2019-01-01&periodEnd=2020-01-01",
+							"host": [
+								"{{Blaze Global Health}}"
+							],
+							"path": [
+								"fhir",
+								"Measure",
+								"measure-mrpfhir",
+								"$notify-report-requested"
+							],
+							"query": [
+								{
+									"key": "patient",
+									"value": "{{Patient ID}}"
+								},
+								{
+									"key": "periodStart",
+									"value": "2019-01-01"
+								},
+								{
+									"key": "periodEnd",
+									"value": "2020-01-01"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a638e708-75f1-414f-971c-0cbdfb9417ae",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "b32b5bba-1a70-4574-b9ac-a94c919dfa8d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "1e61a31e-b09a-4ac3-a2bb-0ba18ac9636a",
+			"key": "Patient ID",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "8633f232-55a9-4292-ba7e-f78127e950e6",
+			"key": "Patient SSN",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "045cfba5-c249-48e9-b413-abefd7e46328",
+			"key": "Basic Auth Username",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "b3a7b644-edaa-4b5b-a035-1d6bd7562f53",
+			"key": "Basic Auth Password",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "8bf833a6-bf1c-4d4f-9da2-d6287f176f89",
+			"key": "Base URL",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "5295d224-ac69-4390-8740-2c0408560d07",
+			"key": "Blaze Global Health",
+			"value": "{{Base URL}}/blaze-global-health-system",
+			"type": "string"
+		},
+		{
+			"id": "9d5bee49-aece-485c-9f40-5ffea8bbf3e9",
+			"key": "Better Health",
+			"value": "{{Base URL}}/better-health-insurance",
+			"type": "string"
+		},
+		{
+			"id": "9adca40a-d854-444e-baf7-71dde26413db",
+			"key": "MiHIN",
+			"value": "{{Base URL}}/mihinss",
+			"type": "string"
+		},
+		{
+			"id": "e14508ba-49b0-4976-b491-de761c2a1f9e",
+			"key": "CQF Ruler",
+			"value": "{{Base URL}}/cqf-ruler-r4",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
